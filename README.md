@@ -2,6 +2,8 @@
 
 CI/CD => create container into server ssh with image github private registry 
 
+Example with nginx server. Check `Dockerfile`
+
 ## Secrets
 configure secrets in settings of project
 

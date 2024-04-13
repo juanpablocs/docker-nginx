@@ -28,6 +28,7 @@ jobs:
             - name: Deploy to server
               run: |
                 sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << EOF
+                docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.TOKEN_GITHUB }}
                 docker pull ghcr.io/juanpablocs/my-nginx:latest
                 docker stop my-nginx || true
                 docker rm my-nginx || true
